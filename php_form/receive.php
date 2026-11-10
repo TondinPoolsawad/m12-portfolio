@@ -3,7 +3,19 @@
 // Complete the TODOs after testing GET and POST in DevTools.
 $method = $_SERVER['REQUEST_METHOD'];
 
-// TODO 1: For GET, read the displayName value from $_GET.
+// php_form/receive.php — completed TODOs
+<?php
+$method = $_SERVER['REQUEST_METHOD'];
+$name = '';
+if ($method === 'GET') {
+$name = $_GET['displayName'] ?? '';
+} elseif ($method === 'POST') {
+$name = $_POST['displayName'] ?? '';
+}
+$name = trim($name);
+$safeName = htmlspecialchars($name,
+ENT_QUOTES, 'UTF-8');
+
 // TODO 2: For POST, read the displayName value from $_POST.
 // Hint: use the null coalescing operator ?? to provide an empty-string default.
 $name = '';
