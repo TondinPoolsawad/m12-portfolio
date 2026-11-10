@@ -1,15 +1,19 @@
 <?php
 // Module 12 starter: HTML form -> PHP on the server.
-// Checkpoint 1 Solution merged
+// Completed TODOs 1-3
 $method = $_SERVER['REQUEST_METHOD'];
+
 $name = '';
 
 if ($method === 'GET') {
+    // TODO 1: For GET, read the displayName value from $_GET.
     $name = $_GET['displayName'] ?? '';
 } elseif ($method === 'POST') {
+    // TODO 2: For POST, read the displayName value from $_POST.
     $name = $_POST['displayName'] ?? '';
 }
 
+// TODO 3: Remove spaces at the beginning/end using trim().
 $name = trim($name);
 
 // This prevents the browser from interpreting the submitted value as HTML.
