@@ -1,26 +1,16 @@
 <?php
 // Module 12 starter: HTML form -> PHP on the server.
-// Complete the TODOs after testing GET and POST in DevTools.
-$method = $_SERVER['REQUEST_METHOD'];
-
-// php_form/receive.php — completed TODOs
-<?php
+// Checkpoint 1 Solution merged
 $method = $_SERVER['REQUEST_METHOD'];
 $name = '';
+
 if ($method === 'GET') {
-$name = $_GET['displayName'] ?? '';
+    $name = $_GET['displayName'] ?? '';
 } elseif ($method === 'POST') {
-$name = $_POST['displayName'] ?? '';
+    $name = $_POST['displayName'] ?? '';
 }
+
 $name = trim($name);
-$safeName = htmlspecialchars($name,
-ENT_QUOTES, 'UTF-8');
-
-// TODO 2: For POST, read the displayName value from $_POST.
-// Hint: use the null coalescing operator ?? to provide an empty-string default.
-$name = '';
-
-// TODO 3: Remove spaces at the beginning/end using trim().
 
 // This prevents the browser from interpreting the submitted value as HTML.
 $safeName = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
